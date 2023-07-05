@@ -128,3 +128,22 @@ function onSubmit(event){
     console.log("입금자명", depositName.value)
     console.log("주소", postcode.value, address.value, detailAddress.value, extraAddress.value) 
 }
+
+email.addEventListener("input", () => {
+    onClickEmail()
+})
+
+
+function onClickEmail() {
+    const inputValue = email.value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(inputValue)) {
+        emailmsg.innerText = "이메일 형식을 확인해주세요."
+        return;
+    }
+    if (emailRegex.test(inputValue)) {
+        emailmsg.innerText = "";
+        return;
+    }
+}
