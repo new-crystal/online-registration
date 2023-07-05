@@ -12,7 +12,7 @@
     border: 1px solid #ddd;
     padding: 8px 16px;
     height: 2.5rem;
-    width: 60%;
+    width: 90%;
 }
     label {
         margin-right: 1.2rem;
@@ -32,7 +32,7 @@
     }
 </style>
 <body>
-      <form class="txtCon regist flex flex-col items-center justify-center">
+      <form id="form" class="txtCon regist flex flex-col items-center justify-center">
               <div class="border w-1/2 text-center flex flex-col text-lg p-5 mt-5">
                 <div>
                     선생님의 개인 정보는 2023년 대한심뇌혈관질환예방학회 개원의 연수강좌에 대한 학술대회 활동 수행을 위한 목적으로만 활용됩니다.
@@ -73,7 +73,7 @@
                         <td class="flex flex-wrap">
                             <div class="flex w-3/5 justify-between items-center">
                                 <!-- <input type="text" id="Participation" maxlength="64" value="" class="w-11/12"> -->
-                                <select id="Participation_1" style="background-color:#ffffff;"
+                                <select id="participation" style="background-color:#ffffff;"
                                 class="px-2 py-1 w-full h-10 border">
                                     <option value="" selected="selected">선택사항</option>
                                     <option value="Paticipants">일반참가자</option>
@@ -91,7 +91,7 @@
                         <th>참석자 구분</th>
                         <td>
                             <div class="flex w-3/5 justify-between items-center">
-                                <select id="Category" style="background-color:#ffffff;" class="px-2 py-1 w-full h-10 border">
+                                <select id="category" style="background-color:#ffffff;" class="px-2 py-1 w-full h-10 border">
                                     <option value="" selected="selected">선택사항</option>
                                     <option value="개원의">개원의</option>
                                     <option value="봉직의">봉직의</option>
@@ -132,7 +132,7 @@
                             소속
                         </th>
                         <td>
-                            <input type="text" id="Affiliation" name="Affiliation" placeholder="*소속"/>
+                            <input type="text" id="affiliation" name="affiliation" placeholder="*소속"/>
                         </td>
                     </tr>
                     <tr>
@@ -172,10 +172,10 @@
                             주소
                         </th>
                         <td>
-                            <input type="text" id="sample6_postcode" placeholder="우편번호" onclick="sample6_execDaumPostcode()">
-                            <input type="text" id="sample6_address" placeholder="주소"><br>
-                            <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-                            <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+                            <input type="text" id="sample6_postcode" placeholder="*우편번호" onclick="sample6_execDaumPostcode()">
+                            <input type="text" id="sample6_address" placeholder="*주소"><br>
+                            <input type="text" id="sample6_detailAddress" placeholder="*상세주소">
+                            <input type="text" id="sample6_extraAddress" placeholder="*참고항목">
                         </td>
                     </tr>
                   </table>
@@ -186,7 +186,7 @@
               </div>
       </form>
 </body>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     function sample6_execDaumPostcode() {
         new daum.Postcode({
